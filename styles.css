@@ -26,7 +26,7 @@ body {
     background-position: top center; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
-    background-size: cover; 
+    background-size: auto; 
     background-image: url(assets/images/BG3.webp);
 }
 
@@ -35,6 +35,7 @@ body {
         background-image: url(assets/images/BG3_mobile.jpeg);
         background-size: auto;
         height: 100vh;
+        background-attachment: fixed;
     }
 }
 
