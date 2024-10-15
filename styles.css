@@ -6,7 +6,7 @@
 }
 
 :root {
-    --base: #f3f6fd;
+    --base: rgb(152, 154, 154);
     --base-100: #443e3e;
     --base-800: #f9f9f9;
     --blue: #0a61ae;
@@ -147,10 +147,10 @@ header {
                 display: flex;
                 a {
                     display: inline-block;
-                    color: var(--font-color);
+                    color: var(--base);
                     padding: 5px;
                     text-transform: uppercase;
-                    transition: transform 0.2s ease;
+                    transition: transform 0.15s ease, color 0.15s ease;
                     &:hover {
                         transform: scale(1.05);
                         text-decoration: none;
