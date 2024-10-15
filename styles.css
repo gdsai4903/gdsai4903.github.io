@@ -31,16 +31,10 @@ body {
 }
 
 @media only screen and (max-width:764px){
-    html {
-        background-image: url('assets/images/BG3_mobile.jpeg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* May not work perfectly on all mobile devices */
-        height: 100%;
-    }
     body {
-        min-height: 100%;
-        background: none;
+        background-image: url(assets/images/BG3_mobile.jpeg);
+        background-size: auto;
+        height: 100vh;
     }
 }
 
