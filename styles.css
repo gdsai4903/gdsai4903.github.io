@@ -1,5 +1,6 @@
 /* General Styles */
 html, body {
+    font-family: Roboto;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -11,12 +12,53 @@ html, body {
     background-image: url(./images/BG3.webp);
 }
 
-body::-webkit-scrollbar {
-    display: none; /* Hides scrollbar */
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-h1, h2, h3, p {
-    font-family: Roboto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    font-weight: normal;
+    line-height: 120% !important;
+    color: white;
+    margin: 0
+}
+
+h1 {
+    font-size: 65px
+}
+
+h2 {
+    font-size: 50px
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hides scrollbar */
 }
 
 /* Home Section */
@@ -34,49 +76,46 @@ h1, h2, h3, p {
     position: relative;
 }
 
-.home-content h2 {
-    font-size: 65px;
+.home-content h1{
     font-weight: 300;
     text-transform: uppercase;
     text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .intro {
     padding: 15px;
-    font-size: 18px;
     font-weight: 300;
     width: 1000px;
     margin: 0 auto;
 }
 
 /* Card Section for Projects and Certifications */
-.content {
+.about {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
 }
 
 .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 150px; /* Space between cards */
-    margin-top: 50px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
 }
 
 .card {
+    display: flex;
+    flex-direction: row;
     border-style: solid;
     border-color: rgb(40, 40, 40);
     border-width: 1px;
     border-radius: 10px;
-    width: 100%;
     padding: 20px;
+    margin-bottom: 200px;
     text-align: center;
-    max-width: 300px;
+    max-width: 1140px;
+    max-height: 600px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent white */
@@ -90,21 +129,17 @@ h1, h2, h3, p {
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
 }
 
-.card img.icon {
-    height: 250px;
-    border-radius: 8px;
-    margin-bottom: 5px;
+.about-text {
+    padding: 5rem;
 }
 
 .card h3 {
-    font-size: 24px;
     font-weight: 300;
     color: #fff;
     margin-top: 10px;
 }
 
 .card p {
-    font-size: 18px;
     font-weight: 200;
     color: #cfcfcf;
     margin: 15px 0px;
@@ -127,13 +162,273 @@ h1, h2, h3, p {
     }
 }
 
+/* Projects Section*/
+.projects {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+    background-color: #212223;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    align-content: center;
+
+}
+
+/* background-image: 
+radial-gradient(circle, transparent 1rem, #212223 1rem),
+linear-gradient(#8a8d86 .5rem,transparent 0.5rem),
+linear-gradient(90deg, #8a8d86 .5rem, transparent .5rem);
+background-size: 5rem 5rem;
+background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem; */
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+}
+
+.project-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-title h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.project-subtitle {
+    font-weight: 300;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    gap: 50px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-color: transparent;
+    width: 30rem;
+    height: 40rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    background: rgba(140, 140, 140, 0.3); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Blur the background behind the card */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    border-style: solid;
+    border-width: 2px;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: rgba(60, 60, 60, 0.5); /* Semi-transparent white */
+}
+
+.project-images {
+    width: 100%;
+    flex-direction: row;
+    gap: 15px; /* Adds space between images */
+}
+
+.project-images img{
+    width: 100%;
+    margin: 1rem 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-image {
+    object-fit: cover ; /* Ensures the images cover the space without stretching */
+    border-radius: 10px;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0px 15px;
+}
+
+.project-content h3 {
+    margin: 1rem 0 0 0;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    font-weight: 200;
+    color: #cfcfcf;
+    margin: 15px 0px;
+    padding: 0;
+}
+
+.project-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Projects Section*/
+.achievements {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+    /* background-color: #212223; */
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    align-content: center;
+
+}
+
+/* background-image: 
+radial-gradient(circle, transparent 1rem, #212223 1rem),
+linear-gradient(#8a8d86 .5rem,transparent 0.5rem),
+linear-gradient(90deg, #8a8d86 .5rem, transparent .5rem);
+background-size: 5rem 5rem;
+background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem; */
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+}
+
+.achievements-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.achievements-title h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.achievements-subtitle {
+    font-weight: 300;
+}
+
+.achievements-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    gap: 50px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.achievements-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-color: transparent;
+    width: 30rem;
+    height: 40rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Blur the background behind the card */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    border-style: solid;
+    border-width: 2px;
+}
+
+.achievements-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+}
+
+.achievements-images {
+    width: 100%;
+    flex-direction: row;
+    gap: 15px; /* Adds space between images */
+}
+
+.achievements-images img{
+    width: 100%;
+    margin: 1rem 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.achievements-image {
+    object-fit: cover ; /* Ensures the images cover the space without stretching */
+    border-radius: 10px;
+}
+
+.achievements-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0px 15px;
+}
+
+.achievements-content h3 {
+    margin: 1rem 0 0 0;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.achievements-content p {
+    font-weight: 200;
+    color: #cfcfcf;
+    margin: 15px 0px;
+    padding: 0;
+}
+
+.achievements-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.achievements-link:hover {
+    text-decoration: underline;
+}
+
+
 /* Footer Section */
 .footer {
-    margin-top: 100px;
     padding-top: 100px;
     z-index: 1;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(14, 14, 14, 1));
 }
 
 .footer-content {
@@ -146,6 +441,8 @@ h1, h2, h3, p {
 
 .footer-content p {
     padding-top: 10px;
+    font-size: 15px;
+    font-weight: 100;
 }
 
 .footer-content .socials svg {
