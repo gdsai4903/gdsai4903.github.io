@@ -6,7 +6,7 @@
 }
 
 :root {
-    --base: rgb(152, 154, 154);
+    --base: rgb(181, 181, 181);
     --base-100: #2c2a27;
     --base-800: #f9f9f9;
     --blue: #0a61ae;
@@ -312,7 +312,7 @@ main::before {
     text-align: center;
     max-width: 1140px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(15px); /* Blur the background behind the card */
     -webkit-backdrop-filter: blur(15px); /* For Safari support */
@@ -325,7 +325,6 @@ main::before {
 }
 
 .card:hover {
-    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -346,8 +345,13 @@ main::before {
 }
 
 .card a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: underline;
+    color: var(--base);
+    transition: color 0.2s ease;
+}
+
+.card a:hover {
+    color: white;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -419,7 +423,7 @@ main::before {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.project-card {
+.projects-container a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -437,10 +441,11 @@ main::before {
     -webkit-backdrop-filter: blur(15px); /* For Safari support */
     border-style: solid;
     border-width: 2px;
+    text-decoration: none;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    text-decoration: none;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: rgba(60, 60, 60, 0.5); /* Semi-transparent white */
 }
