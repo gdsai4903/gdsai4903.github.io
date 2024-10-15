@@ -210,7 +210,7 @@ main::before {
     background-size: cover;
     background-position: center;
     z-index: -1; /* Make sure it's behind all content */
-    pointer-events: none; /* Prevents any interaction with the background */
+    pointer-events: none;
 }
 
 
@@ -431,7 +431,7 @@ main::before {
     text-align: center;
     border-color: transparent;
     max-width: 30rem;
-    min-height: 40rem;
+    min-height: 34rem;
     padding: 0px 20px;
     border-radius: 10px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
@@ -486,8 +486,8 @@ main::before {
 }
 
 @media only screen and (max-width:768px) {
-    .project-card {
-        min-height: 0rem;
+    .projects-container a {
+        min-height: 0;
         padding-bottom: 1rem;
     }
     .project-card p {
@@ -581,7 +581,7 @@ main::before {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.certificates-card {
+.certificates-container a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -589,7 +589,7 @@ main::before {
     text-align: center;
     border-color: transparent;
     max-width: 30rem;
-    min-height: 36rem;
+    min-height: 40rem;
     padding: 1rem 20px;
     border-radius: 10px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
@@ -602,9 +602,9 @@ main::before {
 }
 
 .certificates-card:hover {
-    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+    text-decoration: none;
 }
 
 .certificates-images {
@@ -647,7 +647,7 @@ main::before {
 }
 
 @media only screen and (max-width:768px) {
-    .certificates-card {
+    .certificates-container a {
         min-height: 0rem;
     }
     .certificates-card p {
