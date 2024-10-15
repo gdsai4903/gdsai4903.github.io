@@ -498,6 +498,7 @@ body::-webkit-scrollbar {
     padding-top: 1rem;
     z-index: 1;
     position: relative;
+    background-color: #212224;
 }
 
 .footer-content {
