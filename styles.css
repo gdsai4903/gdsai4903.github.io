@@ -30,9 +30,17 @@ body {
     background-image: url(assets/images/BG3.webp);
 }
 
-@media (max-width:1024px){
-    body{
-        max-height: 100vh;
+@media only screen and (max-width:764px){
+    html {
+        background-image: url('assets/images/BG3_mobile.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* May not work perfectly on all mobile devices */
+        height: 100%;
+    }
+    body {
+        min-height: 100%;
+        background: none;
     }
 }
 
