@@ -13,11 +13,19 @@ html, body {
     padding: 0;
     scroll-behavior: smooth;
     color: rgb(255, 255, 255);
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url(assets/images/BG3.webp);
+}
+
+@media only screen and (max-width:768px){
+    body{
+        background-image: url(assets/images/BG3_mobile.jpeg);
+        background-size: cover; /* Make sure the mobile background covers the screen */
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 /* Remove default margin */
