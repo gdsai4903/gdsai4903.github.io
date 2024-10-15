@@ -30,12 +30,12 @@ html, body {
     background-image: url(assets/images/BG3.webp);
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:1024px){
     html, body{
-        background-image: url(assets/images/BG3_mobile.jpeg);
+        background-image: url(assets/images/BG3.webp);
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
+        background-size: auto;
+        height: 100vh;
     }
 }
 
