@@ -7,7 +7,7 @@
 
 :root {
     --base: rgb(152, 154, 154);
-    --base-100: #443e3e;
+    --base-100: #2c2a27;
     --base-800: #f9f9f9;
     --blue: #0a61ae;
     --glass-dark: rgba(14, 14, 14, 0.3);
@@ -32,12 +32,7 @@ html, body {
 
 @media only screen and (max-width:1024px){
     html, body{
-        /* background-image: url(assets/images/BG3.webp); */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        max-height: 120vh;
+        background-image: conic-gradient(from 180deg at 50% 65%, var(--base-100), rgb(96, 100, 99));
     }
 }
 
@@ -200,8 +195,7 @@ header {
 				}
 			}
 		}
-	}.mobile-toggle {
-    }
+	}
 }
 
         
