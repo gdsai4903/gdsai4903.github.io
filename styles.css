@@ -23,16 +23,18 @@ html, body {
     padding: 0;
     scroll-behavior: smooth;
     color: var(--font-color);
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-image: url(assets/images/BG3.webp);
 }
 
-@media only screen and (max-width:1024px){
+@media (max-width:1024px){
     html, body{
-        background-image: conic-gradient(from 180deg at 50% 65%, var(--base-100), rgb(96, 100, 99));
+        /* background-image: conic-gradient(from 180deg at 50% 60%, var(--base-100), rgb(96, 100, 99)); */
+        background-attachment: fixed;
+        background-size: cover;
     }
 }
 
