@@ -24,7 +24,6 @@ html, body {
         background-image: url(assets/images/BG3_mobile.jpeg);
         background-size: cover; /* Make sure the mobile background covers the screen */
         background-position: center;
-        background-repeat: no-repeat;
     }
 }
 
@@ -58,11 +57,11 @@ h6 {
 }
 
 h1 {
-    font-size: 65px
+    font-size: 64px
 }
 
 h2 {
-    font-size: 50px
+    font-size: 48px
 }
 
 h3 {
@@ -71,6 +70,24 @@ h3 {
 
 p {
     font-size: 18px
+}
+
+@media only screen and (max-width:768px){
+    h1 {
+        font-size: 48px;
+    }
+    h2 {
+        font-size: 36px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    a {
+        font-size: 12px;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -181,6 +198,12 @@ body::-webkit-scrollbar {
     -webkit-backdrop-filter: blur(15px); /* For Safari support */
 }
 
+@media only screen and (max-width:768px) {
+    .card {
+        padding: 0;
+    }
+}
+
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -286,7 +309,7 @@ body::-webkit-scrollbar {
     border-color: transparent;
     max-width: 30rem;
     min-height: 40rem;
-    padding: 10px;
+    padding: 0px 20px;
     border-radius: 10px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -336,6 +359,15 @@ body::-webkit-scrollbar {
 
 .project-link:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width:768px) {
+    .project-card {
+        min-height: 30rem;
+    }
+    .project-card p {
+        padding: 0;
+    }
 }
 
 
@@ -433,7 +465,7 @@ body::-webkit-scrollbar {
     border-color: transparent;
     max-width: 30rem;
     min-height: 40rem;
-    padding: 20px;
+    padding: 0 20px;
     border-radius: 10px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -453,12 +485,10 @@ body::-webkit-scrollbar {
 .certificates-images {
     width: 100%;
     flex-direction: row;
-    gap: 15px; /* Adds space between images */
 }
 
 .certificates-images img{
     width: 100%;
-    margin: 1rem 0;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -479,7 +509,6 @@ body::-webkit-scrollbar {
     font-weight: 200;
     color: #cfcfcf;
     margin: 15px 0px;
-    padding: 0;
 }
 
 .certificates-link {
@@ -490,6 +519,15 @@ body::-webkit-scrollbar {
 
 .certificates-link:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width:768px) {
+    .certificates-card {
+        min-height: 20rem;
+    }
+    .certificates-card p {
+        padding: 0;
+    }
 }
 
 
