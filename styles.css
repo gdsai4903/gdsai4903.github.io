@@ -16,6 +16,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     background-image: url(assets/images/BG3.webp);
 }
 
@@ -465,7 +466,7 @@ body::-webkit-scrollbar {
     border-color: transparent;
     max-width: 30rem;
     min-height: 40rem;
-    padding: 0 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
