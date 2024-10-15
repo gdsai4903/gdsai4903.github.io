@@ -20,7 +20,7 @@ html, body {
 }
 
 @media only screen and (max-width:768px){
-    body{
+    html, body{
         background-image: url(assets/images/BG3_mobile.jpeg);
         background-size: cover; /* Make sure the mobile background covers the screen */
         background-position: center;
