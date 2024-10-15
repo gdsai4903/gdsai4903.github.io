@@ -36,7 +36,8 @@ html, body {
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: contain;
+        background-size: cover;
+        max-height: 120vh;
     }
 }
 
