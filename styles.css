@@ -68,19 +68,22 @@ body::-webkit-scrollbar {
     display: none; /* Hides scrollbar */
 }
 
+
 /* Home Section */
 .home {
-    display: table;
-    width: 100%;
+    display: flex;
     height: 100%;
-    text-align: center;
     position: relative;
+    align-items: center;
+}
+
+.wrapper {
+    margin-inline: auto;
 }
 
 .home-content {
-    display: table-cell;
-    vertical-align: middle;
     position: relative;
+    text-align: center;
 }
 
 .home-content h1{
@@ -90,15 +93,15 @@ body::-webkit-scrollbar {
 }
 
 .intro {
-    padding: 15px;
     font-weight: 300;
-    width: 1000px;
-    margin: 0 auto;
+    max-width: 1140;
 }
 
 /* Card Section for Projects and Certifications */
 .about {
     display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .card-container {
@@ -115,7 +118,6 @@ body::-webkit-scrollbar {
     margin-bottom: 200px;
     text-align: center;
     max-width: 1140px;
-    max-height: 600px;
     box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     background: rgba(0, 0, 0, 0.3);
@@ -130,7 +132,7 @@ body::-webkit-scrollbar {
 }
 
 .about-text {
-    padding: 5rem;
+    padding: 2rem;
 }
 
 .card h3 {
@@ -266,7 +268,7 @@ body::-webkit-scrollbar {
 
 
 /* acheivements Section*/
-.achievements {
+.certificates {
     padding: 70px 0;
     /* background-color: #212223; */
     position: relative;
@@ -281,28 +283,28 @@ linear-gradient(90deg, #8a8d86 .5rem, transparent .5rem);
 background-size: 5rem 5rem;
 background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem; */
 
-.achievement-content {
+.certificate-content {
     max-width: 1140px;
     margin-inline: auto;
     padding-inline: 2rem;
 }
 
-.achievements-title {
+.certificates-title {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.achievements-title h2{
+.certificates-title h2{
     font-weight: 500;
     text-transform: uppercase;
 }
 
-.achievements-subtitle {
+.certificates-subtitle {
     font-weight: 300;
 }
 
-.achievements-container {
+.certificates-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -313,7 +315,7 @@ background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem; */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.achievements-card {
+.certificates-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -333,51 +335,51 @@ background-position: 5.25rem 5.25rem, 2.5rem 2.5rem, 2.5rem 2.5rem; */
     border-width: 2px;
 }
 
-.achievements-card:hover {
+.certificates-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
 }
 
-.achievements-images {
+.certificates-images {
     width: 100%;
     flex-direction: row;
     gap: 15px; /* Adds space between images */
 }
 
-.achievements-images img{
+.certificates-images img{
     width: 100%;
     margin: 1rem 0;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.achievements-image {
+.certificates-image {
     object-fit: cover ; /* Ensures the images cover the space without stretching */
     border-radius: 10px;
 }
 
-.achievements-card h3 {
+.certificates-card h3 {
     margin: 1rem 0 0 0;
     font-weight: 300;
     color: #fff;
     margin-bottom: 15px;
 }
 
-.achievements-card p {
+.certificates-card p {
     font-weight: 200;
     color: #cfcfcf;
     margin: 15px 0px;
     padding: 0;
 }
 
-.achievements-link {
+.certificates-link {
     color: #007bff;
     text-decoration: none;
     font-weight: 500;
 }
 
-.achievements-link:hover {
+.certificates-link:hover {
     text-decoration: underline;
 }
 
