@@ -9,7 +9,7 @@
     --base: rgb(181, 181, 181);
     --base-100: #2c2a27;
     --base-800: #f9f9f9;
-    --blue: #0a61ae;
+    --blue: #05559a;
     --glass-dark: rgba(14, 14, 14, 0.3);
     --font-color: rgb(236, 236, 245);
 }
@@ -53,6 +53,7 @@ a {
         text-decoration: underline;
     }
 }
+
 
 h1,
 h2,
@@ -242,16 +243,6 @@ main::before {
     max-width: 1140;
 }
 
-/* Card Section for Projects and Certifications */
-.about {
-    /* height: 100%; */
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    overflow:hidden;
-    position:relative;
-}
-
 @media (min-width:768px){
     .about::before{
         background-size: 100% 106px;
@@ -259,6 +250,208 @@ main::before {
     }  
 }
 
+
+/* Section*/
+section {
+    padding: 6rem 0rem;
+    position: relative;
+    isolation: isolate;
+    .content {
+        max-width: 1140px;
+        margin-inline: auto;
+        padding-inline: 2rem;
+        .title{
+            h2 {
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            p {font-weight: 300;}
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 50px;
+        gap: 50px; /* Space between cards */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-color: transparent;
+            max-width: 30rem;
+            min-height: 36rem;
+            padding: 0px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            background: rgba(140, 140, 140, 0.3); /* Semi-transparent white */
+            backdrop-filter: blur(15px); /* Blur the background behind the card */
+            -webkit-backdrop-filter: blur(15px); /* For Safari support */
+            border-style: solid;
+            border-width: 2px;
+            text-decoration: none;
+            h3 {
+                margin: 1rem 0 0 0;
+                font-weight: 300;
+                color: #fff;
+                margin-bottom: 15px;
+            }
+            img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            p {
+                font-weight: 200;
+                color: #cfcfcf;
+                padding: 15px 0px;
+                padding-inline: 1.5rem;
+            }
+            @media only screen and (max-width:764px) {
+                p {padding: 0;}
+            }
+        }
+        a:hover {
+            text-decoration: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: rgba(60, 60, 60, 0.5); /* Semi-transparent white */
+        }
+        @media only screen and (max-width:764px) {
+            a {
+                min-height: 0;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}
+
+#portfolio {
+    background-color: #212224;
+}
+
+/* acheivements Section*/
+#certificates {
+    padding-top: 8rem;
+    background-color: rgb(121, 123, 120);
+    position: relative;
+    overflow: hidden;
+    a {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    a:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+#certificates::before{
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat; 
+    background-size: 100% 48px;
+    background-position: 50% 0%;    
+    background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 77"><g fill="%23212224"><path opacity=".5" d="M1872 74v-6l-6-3-5 3v6l5 3 6-3z"/><path opacity=".3" d="M1902 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M1877 69V58l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1333 74v-6l-5-3-6 3v6l6 3 5-3z"/><path opacity=".3" d="M1363 70v-8l8-4 7 4v8l-7 4-8-4z"/><path opacity=".75" d="M1339 69V58l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M786 74v-6l-5-3-5 3v6l5 3 5-3z"/><path opacity=".3" d="M817 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M792 69V58l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M247 74v-6l-5-3-5 3v6l5 3 5-3z"/><path opacity=".3" d="M278 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M253 69V58l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M13 38V16L32 5l19 11v22L32 50 13 38z"/><path opacity=".3" d="M71 67V52l13-8 12 8v15l-12 7-13-7zM0 45V34l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M15 63v-9l8-4 7 4v9l-7 4-8-4z"/><path opacity=".75" d="M37 55V39l14-8 14 8v16l-14 8-14-8zM208 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M59 40V26l12-7 11 7v14l-11 6-12-6zM112 46V24l19-12 19 12v22l-19 11-19-11z"/><path opacity=".3" d="M170 69V58l9-6 10 6v11l-10 5-9-5zM99 52V41l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M114 70v-9l8-4 7 4v9l-7 4-8-4zM193 64v-6l6-3 5 3v6l-5 3-6-3z"/><path opacity=".75" d="M136 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M158 47V33l12-6 11 6v14l-11 7-12-7zM516 39V17L496 5l-19 12v22l19 11 20-11z"/><path opacity=".3" d="M458 67V52l-13-7-13 7v15l13 8 13-8zM528 45V34l-9-6-10 6v11l10 5 9-5z"/><path opacity=".5" d="M511 60v-7l-5-3-6 3v7l6 3 5-3z"/><path opacity=".75" d="M491 55V39l-14-8-14 8v16l14 9 14-9zM320 72v-9l-8-4-7 4v9l8 5 7-5z"/><path opacity=".5" d="M470 40V26l-12-6-12 6v14l12 7 12-7zM417 46V24l-20-11-19 11v22l19 11 20-11z"/><path opacity=".3" d="M359 69V58l-10-5-9 5v11l9 6 10-6zM429 52V41l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M414 70v-8l-7-4-8 4v8l8 5 7-5zM335 64v-6l-5-3-5 3v6l5 4 5-4z"/><path opacity=".75" d="M392 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M371 47V34l-12-7-12 7v13l12 7 12-7zM552 38V16l19-11 19 11v22l-19 12-19-12z"/><path opacity=".3" d="M609 67V52l13-8 13 8v15l-13 7-13-7zM539 45V34l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M554 63v-9l8-4 7 4v9l-7 4-8-4z"/><path opacity=".75" d="M576 55V39l14-8 14 8v16l-14 8-14-8zM747 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M598 40V26l11-7 12 7v14l-12 6-11-6zM651 46V24l19-12 19 12v22l-19 11-19-11z"/><path opacity=".3" d="M708 69V58l10-6 10 6v11l-10 5-10-5zM638 52V41l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M653 70v-9l8-4 7 4v9l-7 4-8-4zM732 64v-6l5-3 6 3v6l-6 3-5-3z"/><path opacity=".75" d="M675 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M697 47V33l11-6 12 6v14l-12 7-11-7zM1054 39V17l-19-12-19 12v22l19 11 19-11z"/><path opacity=".3" d="M997 67V52l-13-7-13 7v15l13 8 13-8zM1067 45V34l-9-6-10 6v11l10 5 9-5z"/><path opacity=".5" d="M1050 60v-7l-6-3-5 3v7l5 3 6-3z"/><path opacity=".75" d="M1030 55V39l-14-8-14 8v16l14 9 14-9zM859 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".5" d="M1008 40V26l-11-6-12 6v14l12 7 11-7zM955 46V24l-19-11-19 11v22l19 11 19-11z"/><path opacity=".3" d="M898 69V58l-10-5-10 5v11l10 6 10-6zM968 52V41l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M953 70v-8l-8-4-7 4v8l7 5 8-5zM874 64v-6l-5-3-6 3v6l6 4 5-4z"/><path opacity=".75" d="M931 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M909 47V34l-11-7-12 7v13l12 7 11-7zM1090 38V16l20-11 19 11v22l-19 12-20-12z"/><path opacity=".3" d="M1148 67V52l13-8 13 8v15l-13 7-13-7zM1078 45V34l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M1093 63v-9l7-4 8 4v9l-8 4-7-4z"/><path opacity=".75" d="M1115 55V39l14-8 14 8v16l-14 8-14-8zM1286 72v-9l8-5 7 5v9l-7 4-8-4z"/><path opacity=".5" d="M1136 40V26l12-7 12 7v14l-12 6-12-6zM1189 46V24l20-12 19 12v22l-19 11-20-11z"/><path opacity=".3" d="M1247 69V58l10-6 9 6v11l-9 5-10-5zM1177 52V41l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M1192 70v-9l7-4 8 4v9l-8 4-7-4zM1271 64v-6l5-3 5 3v6l-5 3-5-3z"/><path opacity=".75" d="M1214 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M1235 47V33l12-6 12 6v14l-12 7-12-7zM1593 39V17l-19-12-19 12v22l19 11 19-11z"/><path opacity=".3" d="M1535 67V52l-13-7-12 7v15l13 8 12-8zM1606 45V34l-10-6-9 6v11l9 5 10-5z"/><path opacity=".5" d="M1589 60v-7l-6-3-5 3v7l5 3 6-3z"/><path opacity=".75" d="M1569 55V39l-14-8-14 8v16l14 9 14-9zM1398 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".5" d="M1547 40V26l-12-6-11 6v14l11 7 12-7zM1494 46V24l-19-11-19 11v22l19 11 19-11z"/><path opacity=".3" d="M1436 69V58l-9-5-10 5v11l10 6 9-6zM1507 52V41l-10-5-9 5v11l10 6 9-6z"/><path opacity=".5" d="M1492 70v-8l-8-4-7 4v8l7 5 8-5zM1413 64v-6l-6-3-5 3v6l6 4 5-4z"/><path opacity=".75" d="M1470 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M1448 47V34l-12-7-11 7v13l11 7 12-7zM1629 38V16l19-11 20 11v22l-20 12-19-12z"/><path opacity=".3" d="M1687 67V52l13-8 13 8v15l-13 7-13-7zM1616 45V34l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1632 63v-9l7-4 8 4v9l-8 4-7-4z"/><path opacity=".75" d="M1653 55V39l15-8 14 8v16l-14 8-15-8zM1824 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M1675 40V26l12-7 12 7v14l-12 6-12-6zM1728 46V24l19-12 20 12v22l-20 11-19-11z"/><path opacity=".3" d="M1786 69V58l9-6 10 6v11l-10 5-9-5zM1715 52V41l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1731 70v-9l7-4 8 4v9l-8 4-7-4zM1809 64v-6l6-3 5 3v6l-5 3-6-3z"/><path opacity=".75" d="M1752 62V46l15-8 14 8v16l-14 8-15-8z"/><path opacity=".5" d="M1774 47V33l12-6 12 6v14l-12 7-12-7z"/><path opacity=".75" d="M1937 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".3" d="M1975 69V58l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M1952 64v-6l-6-3-5 3v6l5 4 6-4z"/><path opacity=".75" d="M2000 42v26l-5 3-15-8V47l7-4 8-5 5 4z"/><path opacity=".5" d="M1987 47V34l-12-7-12 7v13l12 7 12-7z"/><path d="M2000 0v38l-115 22-4 1-26 5-17-4h-5l-243-47-230 44-3 1-32 6-11-2-6-1-248-48-225 43h-2l-38 8-5-1-6-1-254-49-219 42h-1l-44 8-1 1-6-1-44-9L0 15V0h2000z"/></g></svg>'); 
+}   
+@media (min-width:768px){
+    .certificates::before{
+        background-size: 100% 82px;
+        background-position: 50% 0%;   
+    }  
+}
+@media (min-width:1025px){
+    .certificates::before{ 
+        bottom: -0.1vw;
+        left: -0.1vw;
+        right: -0.1vw;
+        top: -0.1vw; 
+        background-size: 158% 82px;
+        background-position: 50% 0%;  
+    }
+}
+@media (min-width:2100px){
+    .certificates::before{
+        background-size: 158% calc(2vw + 82px);
+    }
+}
+
+#achievements {
+    background-image: conic-gradient(from 45deg at 0% 0%, var(--base-100), var(--blue));
+}
+
+.about {
+    padding: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    overflow:hidden;
+    position:relative;
+    .container {
+        flex-direction: column;
+        margin-inline: auto;
+        padding-inline: 2rem;
+        .card {
+            border-style: solid;
+            border-color: rgb(40, 40, 40);
+            border-width: 1px;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            max-width: 1140px;
+            box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            .about-text {
+                padding: 2rem;
+            }
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .about-text {
+            padding: 2rem;
+            h2 {
+                font-weight: 300;
+                color: #fff;
+                text-transform: uppercase;
+            }
+            p {
+                font-weight: 200;
+                color: var(--base-800);
+                margin: 15px 0px;
+            }
+            .socials {
+                text-decoration: none;
+                color: var(--base);
+                transition: color 0.2s ease;
+                background-color: transparent;
+                border-style: none;
+            }
+            .socials:hover {
+                color: white;
+            }
+        }
+        @media (min-width:768px){
+            .about::before{
+                background-size: 100% 106px;
+                background-position: 50% 100%;   
+            }  
+        }
+    }
+}
 .about::before{
     content:'';
     font-family:'shape divider from ShapeDividers.com';
@@ -298,408 +491,42 @@ main::before {
     }
 }
 
-.card-container {
-    margin-inline: auto;
-    padding-inline: 2rem;
-}
 
-.card {
-    border-style: solid;
-    border-color: rgb(40, 40, 40);
-    border-width: 1px;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    max-width: 1140px;
-    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px); /* Blur the background behind the card */
-    -webkit-backdrop-filter: blur(15px); /* For Safari support */
-}
-
-@media only screen and (max-width:768px) {
-    .card {
-        padding: 0;
-    }
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.about-text {
-    padding: 2rem;
-}
-
-.card h3 {
-    font-weight: 300;
-    color: #fff;
-    margin-top: 10px;
-}
-
-.card p {
-    font-weight: 200;
-    color: var(--base-800);
-    margin: 15px 0px;
-}
-
-.card a {
-    text-decoration: underline;
-    color: var(--base);
-    transition: color 0.2s ease;
-}
-
-.card a:hover {
-    color: white;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-}
-
-/* Projects Section*/
-.projects {
-    padding: 4rem 0rem 4rem 0;
-    position: relative;
-    isolation: isolate;
+/* contact Section */
+#contact {
     background-color: #212224;
+    .content {
+        .container {
+            flex-direction: row;
+            a {
+                align-items: left;
+                padding: 0;
+                flex-direction: row;
+                min-height: 0;
+                background-color: transparent;
+                backdrop-filter: none;
+                box-shadow: none;
+                img {
+                    width: 30px;
+                    padding: 0;
+                }
+                p {
+                    padding: 0 10px;
+                }
+            }
+            a:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
 }
 
-
-.custom-shape-divider-bottom-1729002806 {
-    --divider-height: 50px;
-    position: absolute;
-    top: calc(var(--divider-height)*-1);
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1729002806 svg {
-    position: relative;
-    display: block;
-    width: calc(118% + 1.3px);
-    height: var(--divider-height);
-}
-
-.custom-shape-divider-bottom-1729002806 .shape-fill {
-    fill: #212224;
-}
-
-.portfolio-content {
-    max-width: 1140px;
-    margin-inline: auto;
-    padding-inline: 2rem;
-}
-
-.project-title h2{
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.project-subtitle {
-    font-weight: 300;
-}
-
-.projects-container {
+footer {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    gap: 50px; /* Space between cards */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.projects-container a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    border-color: transparent;
-    max-width: 30rem;
-    min-height: 34rem;
-    padding: 0px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    background: rgba(140, 140, 140, 0.3); /* Semi-transparent white */
-    backdrop-filter: blur(15px); /* Blur the background behind the card */
-    -webkit-backdrop-filter: blur(15px); /* For Safari support */
-    border-style: solid;
-    border-width: 2px;
-    text-decoration: none;
-}
-
-.project-card:hover {
-    text-decoration: none;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: rgba(60, 60, 60, 0.5); /* Semi-transparent white */
-}
-
-.project-images {
-    width: 100%;
-    flex-direction: row;
-}
-
-.project-images img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.project-card h3 {
-    margin: 1rem 0 0 0;
-    font-weight: 300;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    font-weight: 200;
-    color: #cfcfcf;
-    margin: 15px 0px;
-    padding-inline: 1.5rem;
-}
-
-.project-link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-    .projects-container a {
-        min-height: 0;
-        padding-bottom: 1rem;
-    }
-    .project-card p {
-        padding: 0;
+    p {
+        font-size: 12px;
+        font-weight: 100;
     }
 }
-
-
-/* acheivements Section*/
-.certificates {
-    padding: 4rem 0 2rem 0;
-    background-color: rgb(121, 123, 120);
-    position: relative;
-    overflow: hidden;
-}
-
-.certificates{
-    overflow:hidden;
-    position:relative;
-    }
-.certificates::before{
-    content:'';
-    font-family:'shape divider from ShapeDividers.com';
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    top: -1px;
-    z-index: 3;
-    pointer-events: none;
-    background-repeat: no-repeat; 
-    background-size: 100% 48px;
-    background-position: 50% 0%;    
-    background-image: url('data:image/svg+xml;charset=utf8, <svg preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 77"><g fill="%23212224"><path opacity=".5" d="M1872 74v-6l-6-3-5 3v6l5 3 6-3z"/><path opacity=".3" d="M1902 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M1877 69V58l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1333 74v-6l-5-3-6 3v6l6 3 5-3z"/><path opacity=".3" d="M1363 70v-8l8-4 7 4v8l-7 4-8-4z"/><path opacity=".75" d="M1339 69V58l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M786 74v-6l-5-3-5 3v6l5 3 5-3z"/><path opacity=".3" d="M817 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M792 69V58l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M247 74v-6l-5-3-5 3v6l5 3 5-3z"/><path opacity=".3" d="M278 70v-8l7-4 7 4v8l-7 4-7-4z"/><path opacity=".75" d="M253 69V58l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M13 38V16L32 5l19 11v22L32 50 13 38z"/><path opacity=".3" d="M71 67V52l13-8 12 8v15l-12 7-13-7zM0 45V34l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M15 63v-9l8-4 7 4v9l-7 4-8-4z"/><path opacity=".75" d="M37 55V39l14-8 14 8v16l-14 8-14-8zM208 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M59 40V26l12-7 11 7v14l-11 6-12-6zM112 46V24l19-12 19 12v22l-19 11-19-11z"/><path opacity=".3" d="M170 69V58l9-6 10 6v11l-10 5-9-5zM99 52V41l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M114 70v-9l8-4 7 4v9l-7 4-8-4zM193 64v-6l6-3 5 3v6l-5 3-6-3z"/><path opacity=".75" d="M136 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M158 47V33l12-6 11 6v14l-11 7-12-7zM516 39V17L496 5l-19 12v22l19 11 20-11z"/><path opacity=".3" d="M458 67V52l-13-7-13 7v15l13 8 13-8zM528 45V34l-9-6-10 6v11l10 5 9-5z"/><path opacity=".5" d="M511 60v-7l-5-3-6 3v7l6 3 5-3z"/><path opacity=".75" d="M491 55V39l-14-8-14 8v16l14 9 14-9zM320 72v-9l-8-4-7 4v9l8 5 7-5z"/><path opacity=".5" d="M470 40V26l-12-6-12 6v14l12 7 12-7zM417 46V24l-20-11-19 11v22l19 11 20-11z"/><path opacity=".3" d="M359 69V58l-10-5-9 5v11l9 6 10-6zM429 52V41l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M414 70v-8l-7-4-8 4v8l8 5 7-5zM335 64v-6l-5-3-5 3v6l5 4 5-4z"/><path opacity=".75" d="M392 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M371 47V34l-12-7-12 7v13l12 7 12-7zM552 38V16l19-11 19 11v22l-19 12-19-12z"/><path opacity=".3" d="M609 67V52l13-8 13 8v15l-13 7-13-7zM539 45V34l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M554 63v-9l8-4 7 4v9l-7 4-8-4z"/><path opacity=".75" d="M576 55V39l14-8 14 8v16l-14 8-14-8zM747 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M598 40V26l11-7 12 7v14l-12 6-11-6zM651 46V24l19-12 19 12v22l-19 11-19-11z"/><path opacity=".3" d="M708 69V58l10-6 10 6v11l-10 5-10-5zM638 52V41l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M653 70v-9l8-4 7 4v9l-7 4-8-4zM732 64v-6l5-3 6 3v6l-6 3-5-3z"/><path opacity=".75" d="M675 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M697 47V33l11-6 12 6v14l-12 7-11-7zM1054 39V17l-19-12-19 12v22l19 11 19-11z"/><path opacity=".3" d="M997 67V52l-13-7-13 7v15l13 8 13-8zM1067 45V34l-9-6-10 6v11l10 5 9-5z"/><path opacity=".5" d="M1050 60v-7l-6-3-5 3v7l5 3 6-3z"/><path opacity=".75" d="M1030 55V39l-14-8-14 8v16l14 9 14-9zM859 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".5" d="M1008 40V26l-11-6-12 6v14l12 7 11-7zM955 46V24l-19-11-19 11v22l19 11 19-11z"/><path opacity=".3" d="M898 69V58l-10-5-10 5v11l10 6 10-6zM968 52V41l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M953 70v-8l-8-4-7 4v8l7 5 8-5zM874 64v-6l-5-3-6 3v6l6 4 5-4z"/><path opacity=".75" d="M931 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M909 47V34l-11-7-12 7v13l12 7 11-7zM1090 38V16l20-11 19 11v22l-19 12-20-12z"/><path opacity=".3" d="M1148 67V52l13-8 13 8v15l-13 7-13-7zM1078 45V34l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M1093 63v-9l7-4 8 4v9l-8 4-7-4z"/><path opacity=".75" d="M1115 55V39l14-8 14 8v16l-14 8-14-8zM1286 72v-9l8-5 7 5v9l-7 4-8-4z"/><path opacity=".5" d="M1136 40V26l12-7 12 7v14l-12 6-12-6zM1189 46V24l20-12 19 12v22l-19 11-20-11z"/><path opacity=".3" d="M1247 69V58l10-6 9 6v11l-9 5-10-5zM1177 52V41l9-6 10 6v11l-10 5-9-5z"/><path opacity=".5" d="M1192 70v-9l7-4 8 4v9l-8 4-7-4zM1271 64v-6l5-3 5 3v6l-5 3-5-3z"/><path opacity=".75" d="M1214 62V46l14-8 14 8v16l-14 8-14-8z"/><path opacity=".5" d="M1235 47V33l12-6 12 6v14l-12 7-12-7zM1593 39V17l-19-12-19 12v22l19 11 19-11z"/><path opacity=".3" d="M1535 67V52l-13-7-12 7v15l13 8 12-8zM1606 45V34l-10-6-9 6v11l9 5 10-5z"/><path opacity=".5" d="M1589 60v-7l-6-3-5 3v7l5 3 6-3z"/><path opacity=".75" d="M1569 55V39l-14-8-14 8v16l14 9 14-9zM1398 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".5" d="M1547 40V26l-12-6-11 6v14l11 7 12-7zM1494 46V24l-19-11-19 11v22l19 11 19-11z"/><path opacity=".3" d="M1436 69V58l-9-5-10 5v11l10 6 9-6zM1507 52V41l-10-5-9 5v11l10 6 9-6z"/><path opacity=".5" d="M1492 70v-8l-8-4-7 4v8l7 5 8-5zM1413 64v-6l-6-3-5 3v6l6 4 5-4z"/><path opacity=".75" d="M1470 63V46l-14-8-14 9v16l14 8 14-8z"/><path opacity=".5" d="M1448 47V34l-12-7-11 7v13l11 7 12-7zM1629 38V16l19-11 20 11v22l-20 12-19-12z"/><path opacity=".3" d="M1687 67V52l13-8 13 8v15l-13 7-13-7zM1616 45V34l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1632 63v-9l7-4 8 4v9l-8 4-7-4z"/><path opacity=".75" d="M1653 55V39l15-8 14 8v16l-14 8-15-8zM1824 72v-9l8-5 8 5v9l-8 4-8-4z"/><path opacity=".5" d="M1675 40V26l12-7 12 7v14l-12 6-12-6zM1728 46V24l19-12 20 12v22l-20 11-19-11z"/><path opacity=".3" d="M1786 69V58l9-6 10 6v11l-10 5-9-5zM1715 52V41l10-6 9 6v11l-9 5-10-5z"/><path opacity=".5" d="M1731 70v-9l7-4 8 4v9l-8 4-7-4zM1809 64v-6l6-3 5 3v6l-5 3-6-3z"/><path opacity=".75" d="M1752 62V46l15-8 14 8v16l-14 8-15-8z"/><path opacity=".5" d="M1774 47V33l12-6 12 6v14l-12 7-12-7z"/><path opacity=".75" d="M1937 72v-9l-8-4-8 4v9l8 5 8-5z"/><path opacity=".3" d="M1975 69V58l-9-5-10 5v11l10 6 9-6z"/><path opacity=".5" d="M1952 64v-6l-6-3-5 3v6l5 4 6-4z"/><path opacity=".75" d="M2000 42v26l-5 3-15-8V47l7-4 8-5 5 4z"/><path opacity=".5" d="M1987 47V34l-12-7-12 7v13l12 7 12-7z"/><path d="M2000 0v38l-115 22-4 1-26 5-17-4h-5l-243-47-230 44-3 1-32 6-11-2-6-1-248-48-225 43h-2l-38 8-5-1-6-1-254-49-219 42h-1l-44 8-1 1-6-1-44-9L0 15V0h2000z"/></g></svg>'); 
-}
-    
-@media (min-width:768px){
-    .certificates::before{
-        background-size: 100% 82px;
-        background-position: 50% 0%;   
-    }  
-}
-     
-@media (min-width:1025px){
-    .certificates::before{ 
-        bottom: -0.1vw;
-        left: -0.1vw;
-        right: -0.1vw;
-        top: -0.1vw; 
-        background-size: 158% 82px;
-        background-position: 50% 0%;  
-    }
-}
-@media (min-width:2100px){
-    .certificates::before{
-        background-size: 158% calc(2vw + 82px);
-    }
-}
-
-
-.certificate-content {
-    max-width: 1140px;
-    margin-inline: auto;
-    padding-inline: 2rem;
-    padding-top: 4rem;
-}
-
-.certificates-title {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.certificates-title h2{
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.certificates-subtitle {
-    font-weight: 300;
-}
-
-.certificates-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    gap: 50px; /* Space between cards */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.certificates-container a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    border-color: transparent;
-    max-width: 30rem;
-    min-height: 40rem;
-    padding: 1rem 20px;
-    border-radius: 10px;
-    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent white */
-    backdrop-filter: blur(15px); /* Blur the background behind the card */
-    -webkit-backdrop-filter: blur(15px); /* For Safari support */
-    border-style: solid;
-    border-width: 2px;
-}
-
-.certificates-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
-    text-decoration: none;
-}
-
-.certificates-images {
-    width: 100%;
-    flex-direction: row;
-}
-
-.certificates-images img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.certificates-image {
-    object-fit: cover ; /* Ensures the images cover the space without stretching */
-    border-radius: 10px;
-}
-
-.certificates-card h3 {
-    margin: 1rem 0 0 0;
-    font-weight: 300;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.certificates-card p {
-    font-weight: 200;
-    color: #cfcfcf;
-    margin: 15px 0px;
-}
-
-.certificates-link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.certificates-link:hover {
-    text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-    .certificates-container a {
-        min-height: 0rem;
-    }
-    .certificates-card p {
-        padding: 0;
-    }
-}
-
-
-/* Footer Section */
-.footer {
-    padding-top: 1rem;
-    z-index: 1;
-    position: relative;
-    background-color: #212224;
-}
-
-.footer-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-content p {
-    padding-top: 10px;
-    font-size: 15px;
-    font-weight: 100;
-}
-
-.footer-content .socials svg {
-    height: 30px;
-    fill: white;
-    z-index: 2;
-}
-
-.socials a:hover svg {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-}
-
-.socials a {
-    color: white;
-    outline: none;
-    text-decoration: none;
-}
-
-.socials a:focus {
-    outline: none;
-    color: white;
-}
-
-
-
 
