@@ -324,10 +324,39 @@ section {
                 font-weight: 200;
                 color: #cfcfcf;
                 padding: 15px 0px;
+                padding-top: 5px;
                 padding-inline: 1.5rem;
             }
             @media only screen and (max-width:764px) {
-                p {padding: 0;}
+                p {padding: 5px;}
+            }
+            ul {
+                padding: 5px;
+                border-bottom: 1px solid #cfcfcf;
+                li {
+                    list-style: circle;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #bbb;
+                    /* width: 100%; */
+                    a {
+                        width: fit-content;
+                        margin-inline: auto;
+                    }
+                }
+            }
+            .flex-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 95%;
+                li {
+                    width: 100%;
+                    text-align: center;
+                    list-style: none;
+                    margin-left: 0;
+                    
+                }
             }
         }
         a:hover {
@@ -340,12 +369,41 @@ section {
                 min-height: 0;
                 padding-bottom: 1rem;
             }
+            ul {
+                li {
+                    list-style: circle;
+                    font-size: 14px;
+                    color: #bbb;
+                    margin-left: 20px;
+                    margin-bottom: 5px;
+                    /* width: 100%; */
+                    a {
+                        width: fit-content;
+                        margin-inline: auto;
+                    }
+                }
+            }
+            .flex-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+                li {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 12px;
+                    list-style: none;
+                    margin-left: 0;
+                    
+                }
+            }
         }
     }
 }
 
 /* Modal Collage Styling */
 .modal {
+    z-index: 1000;
     align-items: center;
     justify-content: center;
     background-color: rgba(40,40,40,0.5);
@@ -377,7 +435,6 @@ section {
                     border-style: none;
                     color: var(--base);
                     transition: 0.2s ease;
-                    z-index: 5;
                 }
                 h3 {
                     width: 100%;
@@ -467,6 +524,7 @@ section {
                     }
                     .flex-list {
                         display: flex;
+                        align-items: center;
                         justify-content: space-around;
                         width: 100%;
                         li {
@@ -582,7 +640,6 @@ section {
     left: -1px;
     right: -1px;
     top: -1px;
-    z-index: 3;
     pointer-events: none;
     background-repeat: no-repeat; 
     background-size: 100% 48px;
@@ -695,7 +752,6 @@ section {
     left: -1px;
     right: -1px;
     top: -1px;
-    z-index: 3;
     pointer-events: none;
     background-repeat: no-repeat; 
     background-size: 100% 66px;
