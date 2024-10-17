@@ -524,6 +524,7 @@ section {
                     gap: 10px;
                     .collage {
                         max-height: 30%;
+                        margin-top: 10px;
                         gap: 5px;
                     }
                     .project-details {

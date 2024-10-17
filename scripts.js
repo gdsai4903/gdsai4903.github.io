@@ -41,10 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.show();
         });
     }
-
-    // Optionally, you can also add an event listener for the mobile toggle button
-    var mobileToggleButton = document.querySelector('.mobile-toggle'); // Adjust selector as necessary
-    if (mobileToggleButton) {
-        mobileToggleButton.addEventListener('click', toggleMobileMenu);
-    }
 });
