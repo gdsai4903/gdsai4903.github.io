@@ -269,6 +269,7 @@ section {
     padding: 6rem 0rem;
     position: relative;
     isolation: isolate;
+    overflow: visible;
     .content {
         max-width: 1140px;
         margin-inline: auto;
@@ -349,6 +350,7 @@ section {
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
+                margin-top: 10px;
                 width: 95%;
                 li {
                     width: 100%;
@@ -403,11 +405,12 @@ section {
 
 /* Modal Collage Styling */
 .modal {
-    z-index: 1000;
+    z-index: 1050 !important;
     align-items: center;
     justify-content: center;
     background-color: rgba(40,40,40,0.5);
     backdrop-filter: blur(15px);
+    position: fixed !important;
 
     .modal-dialog {
         --height: 85vh;
@@ -611,6 +614,7 @@ section {
     }
 }
 .modal-backdrop {
+    z-index: 1040;
     display: none;
 }
 
@@ -620,10 +624,11 @@ section {
 
 /* acheivements Section*/
 #certificates {
+    z-index: 1;
     padding-top: 8rem;
     background-color: rgb(121, 123, 120);
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     a {
         background-color: rgba(0, 0, 0, 0.3);
     }
@@ -677,7 +682,7 @@ section {
     display: flex;
     align-items: center;
     height: 100vh;
-    overflow:hidden;
+    /* overflow:hidden; */
     position:relative;
     .container {
         flex-direction: column;
