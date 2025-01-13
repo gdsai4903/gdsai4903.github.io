@@ -478,22 +478,28 @@ section {
                     padding: 1rem;
                     gap: 1rem;
 
-                    img {
+                    a {
                         width: 90%;
                         vertical-align: middle;
-                        border-radius: 1rem;
-                        /* Adds rounded corners */
-                        object-fit: cover;
-                        /* Ensures the image covers the entire grid cell */
                         cursor: pointer;
                         transition:
                             transform 0.3s ease-in-out,
                             box-shadow 0.3s ease-in-out;
+                        /* padding: 1rem; */
+
+                        img {
+                            width: 100%;
+                            vertical-align: middle;
+                            border-radius: 1rem;
+                            /* Adds rounded corners */
+                            /* object-fit: cover; */
+                            /* Ensures the image covers the entire grid cell */
+                        }
                     }
                 }
 
                 /* Hover Effect */
-                .collage img:hover {
+                .collage a:hover {
                     transform: scale(1.05);
                     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
                 }
