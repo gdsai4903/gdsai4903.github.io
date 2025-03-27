@@ -707,6 +707,30 @@ section {
     }
 }
 
+#experience {
+    background-color: #212224;
+
+    .exp-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    ul {
+        padding-top: 1rem;
+        list-style-type: disc;
+        list-style-position: inside;
+
+        li {
+            text-indent: -1rem;
+            padding-left: 1rem;
+            list-style: circle inside;
+        }
+    }
+}
+
 #portfolio {
     background-color: #212224;
 }
