@@ -1,0 +1,147 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const allProjects = await getCollection('projects');
+const sorted = [...allProjects].sort((a, b) => a.data.order - b.data.order);
+
+const allTechTags = [...new Set(sorted.flatMap(p => p.data.techTags))].sort();
+const allStatuses = [...new Set(sorted.map(p => p.data.status))];
+---
+
+<Layout
+  title="Projects — Gagandeep Singh"
+  description="Projects by Gagandeep Singh — data engineering case studies and open-source work."
+>
+  <div class="mx-auto w-full max-w-[1100px] px-6 md:px-10 pt-16 pb-24 md:pt-20 md:pb-32">
+
+    <a
+        href="/#projects"
+        class="font-mono text-[13px] text-[#5975a4] hover:text-[#4a6491] transition-colors"
+    >
+      ← Back
+    </a>
+
+    <!-- Page header -->
+    <p class="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#8a94a6] mb-3">
+      Projects
+    </p>
+    <h1 class="text-[32px] md:text-[48px] font-semibold tracking-tight text-[#0a0a0a] leading-[1.1] mb-10">
+      All projects
+    </h1>
+
+    <!-- Filters -->
+    <div class="mb-8 space-y-2.5">
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by technology">
+        {allTechTags.map(tag => (
+          <button
+            data-filter-type="tech"
+            data-tag={tag}
+            aria-pressed="true"
+            class="filter-pill font-mono text-[11px] tracking-[0.05em] px-3 py-1 rounded-[6px] border transition-colors cursor-pointer"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by status">
+        {allStatuses.map(status => (
+          <button
+            data-filter-type="status"
+            data-status={status}
+            aria-pressed="true"
+            class="filter-pill font-mono text-[11px] tracking-[0.05em] px-3 py-1 rounded-[6px] border transition-colors cursor-pointer"
+          >
+            {status}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="projects-grid">
+      {sorted.map(entry => (
+        <ProjectCard entry={entry} />
+      ))}
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" hidden class="py-20 text-center">
+      <p class="font-mono text-[14px] text-[#8a94a6]">No projects match the current filters.</p>
+    </div>
+
+  </div>
+</Layout>
+
+<style is:global>
+  .filter-pill[aria-pressed="true"] {
+    background-color: #f7f8fa;
+    border-color: #5975a4;
+    color: #525866;
+  }
+  .filter-pill[aria-pressed="false"] {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+    color: #8a94a6;
+  }
+</style>
+
+<script>
+  const techPills = document.querySelectorAll<HTMLButtonElement>('[data-filter-type="tech"]');
+  const statusPills = document.querySelectorAll<HTMLButtonElement>('[data-filter-type="status"]');
+  const cards = document.querySelectorAll<HTMLElement>('[data-project-card]');
+  const emptyState = document.getElementById('empty-state');
+
+  const activeTechTags = new Set(
+    [...techPills].map(p => p.dataset.tag!)
+  );
+  const activeStatuses = new Set(
+    [...statusPills].map(p => p.dataset.status!)
+  );
+
+  function updateVisibility() {
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const cardTags = card.dataset.techtags!.split(',');
+      const cardStatus = card.dataset.status!;
+      const tagMatch = activeTechTags.size === 0 || cardTags.some(t => activeTechTags.has(t));
+      const statusMatch = activeStatuses.size === 0 || activeStatuses.has(cardStatus);
+      if (tagMatch && statusMatch) {
+        card.removeAttribute('hidden');
+        visibleCount++;
+      } else {
+        card.setAttribute('hidden', '');
+      }
+    });
+    if (emptyState) {
+      visibleCount === 0
+        ? emptyState.removeAttribute('hidden')
+        : emptyState.setAttribute('hidden', '');
+    }
+  }
+
+  function togglePill(pill: HTMLButtonElement, set: Set<string>, key: string) {
+    const isActive = pill.getAttribute('aria-pressed') === 'true';
+    if (isActive) {
+      set.delete(key);
+      pill.setAttribute('aria-pressed', 'false');
+    } else {
+      set.add(key);
+      pill.setAttribute('aria-pressed', 'true');
+    }
+    updateVisibility();
+  }
+
+  techPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      togglePill(pill, activeTechTags, pill.dataset.tag!);
+    });
+  });
+
+  statusPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      togglePill(pill, activeStatuses, pill.dataset.status!);
+    });
+  });
+</script>

@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, description, status, techTags, repoUrl, date } = entry.data;
+const { Content } = await render(entry);
+
+const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+const statusColorMap: Record<string, string> = {
+  'Case Study': 'text-[#525866]',
+  'Personal Project': 'text-[#525866]',
+  'In Progress': 'text-[#5975a4]',
+  'Coming Soon': 'text-[#8a94a6]',
+};
+const statusColor = statusColorMap[status] ?? 'text-[#525866]';
+---
+
+<Layout title={`${title} — Gagandeep Singh`} description={description}>
+  <div class="mx-auto w-full max-w-[720px] px-6 md:px-10 pt-16 pb-24 md:pt-20 md:pb-32">
+
+    <!-- Eyebrow -->
+    <p class="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#8a94a6] mb-4">
+      Project
+    </p>
+
+    <!-- Title -->
+    <h1 class="text-[32px] md:text-[48px] font-semibold tracking-tight text-[#0a0a0a] leading-[1.15] mb-6">
+      {title}
+    </h1>
+
+    <!-- Metadata strip -->
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6">
+      <span class:list={['font-mono text-[12px] font-medium tracking-[0.08em] uppercase', statusColor]}>
+        {status}
+      </span>
+      <span class="font-mono text-[12px] text-[#8a94a6]">{formattedDate}</span>
+      <div class="flex flex-wrap gap-1.5">
+        {techTags.map(tag => (
+          <span class="font-mono text-[11px] text-[#525866] bg-[#f7f8fa] border border-[#e5e7eb] px-2 py-0.5 rounded-[6px]">
+            {tag}
+          </span>
+        ))}
+      </div>
+      {repoUrl && (
+        <a
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-[12px] text-[#5975a4] hover:text-[#4a6491] transition-colors"
+        >
+          Repository ↗
+        </a>
+      )}
+    </div>
+
+    <hr class="border-[#e5e7eb] mb-10" />
+
+    <!-- Markdown body -->
+    <div class="text-[16px] leading-[1.8] text-[#525866] space-y-4 [&_h2]:text-[#0a0a0a] [&_h2]:font-semibold [&_h2]:text-[22px] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-[#0a0a0a] [&_h3]:font-semibold [&_h3]:text-[18px] [&_h3]:mt-8 [&_h3]:mb-3 [&_code]:font-mono [&_code]:text-[14px] [&_code]:bg-[#f7f8fa] [&_code]:border [&_code]:border-[#e5e7eb] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded-[4px] [&_pre]:bg-[#f7f8fa] [&_pre]:border [&_pre]:border-[#e5e7eb] [&_pre]:rounded-[6px] [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre_code]:bg-transparent [&_pre_code]:border-0 [&_pre_code]:p-0 [&_a]:text-[#5975a4] [&_a]:underline-offset-4 [&_a:hover]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:text-[#0a0a0a] [&_strong]:font-semibold">
+      <Content />
+    </div>
+
+    <!-- Back link -->
+    <div class="mt-16 pt-8 border-t border-[#e5e7eb]">
+      <a
+        href="/projects"
+        class="font-mono text-[13px] text-[#5975a4] hover:text-[#4a6491] transition-colors"
+      >
+        ← All projects
+      </a>
+    </div>
+
+  </div>
+</Layout>

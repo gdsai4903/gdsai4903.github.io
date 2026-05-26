@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+
+const allProjects = await getCollection('projects');
+const featured = allProjects
+  .filter(p => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<section id="projects" class="py-16 md:py-24 border-t border-[#e5e7eb]">
+  <div class="mx-auto w-full max-w-[1100px] px-6 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
+      <!-- Left label -->
+      <div class="pt-1">
+        <span class="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#8a94a6]">
+          Projects
+        </span>
+      </div>
+
+      <!-- Right: card grid + link -->
+      <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+          {featured.map(entry => (
+            <ProjectCard entry={entry} />
+          ))}
+        </div>
+
+        <a
+          href="/projects"
+          class="font-mono text-[13px] text-[#5975a4] hover:text-[#4a6491] transition-colors"
+        >
+          View all projects →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

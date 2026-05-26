@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+}
+
+const { entry } = Astro.props;
+const { title, description, status, techTags, thumbnail } = entry.data;
+const slug = entry.id.replace(/\.md$/, '');
+
+const visibleTags = techTags.slice(0, 4);
+const overflow = techTags.length > 4 ? techTags.length - 4 : 0;
+
+const statusColorMap: Record<string, string> = {
+  'Case Study': 'text-[#525866]',
+  'Personal Project': 'text-[#525866]',
+  'In Progress': 'text-[#5975a4]',
+  'Coming Soon': 'text-[#8a94a6]',
+};
+const statusColor = statusColorMap[status] ?? 'text-[#525866]';
+---
+
+<a
+  href={`/projects/${slug}`}
+  data-project-card
+  data-techtags={techTags.join(',')}
+  data-status={status}
+  class="group block border border-[#e5e7eb] rounded-[10px] overflow-hidden hover:border-[#5975a4] transition-colors"
+>
+  <!-- Thumbnail / placeholder -->
+  <div class="aspect-video bg-[#f7f8fa] border-b border-[#e5e7eb] flex items-center justify-center overflow-hidden">
+    {thumbnail ? (
+      <img src={thumbnail} alt={title} class="w-full h-full object-cover" loading="lazy" />
+    ) : (
+      <span class="font-mono text-[11px] tracking-[0.1em] uppercase text-[#8a94a6]">
+        {techTags[0]}
+      </span>
+    )}
+  </div>
+
+  <!-- Card body -->
+  <div class="p-5">
+    <p class:list={['font-mono text-[11px] font-medium tracking-[0.1em] uppercase mb-3', statusColor]}>
+      {status}
+    </p>
+
+    <h3 class="text-[18px] font-semibold leading-snug text-[#0a0a0a] mb-2">
+      {title}
+    </h3>
+
+    <p class="text-[14px] leading-[1.6] text-[#525866] line-clamp-2 mb-4">
+      {description}
+    </p>
+
+    <div class="flex flex-wrap gap-1.5">
+      {visibleTags.map(tag => (
+        <span class="font-mono text-[11px] text-[#525866] bg-[#f7f8fa] border border-[#e5e7eb] px-2 py-0.5 rounded-[6px]">
+          {tag}
+        </span>
+      ))}
+      {overflow > 0 && (
+        <span class="font-mono text-[11px] text-[#8a94a6]">+{overflow}</span>
+      )}
+    </div>
+  </div>
+</a>
