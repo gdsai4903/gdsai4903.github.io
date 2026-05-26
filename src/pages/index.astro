@@ -1,5 +1,9 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -9,12 +13,18 @@ import '../styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Gagandeep Singh — Data Engineer in Winnipeg, MB. Building production data platforms on Microsoft Fabric, Azure Databricks, SQL Server, and Oracle."
+    />
     <title>Gagandeep Singh — Data Engineer</title>
   </head>
-  <body class="min-h-full bg-white text-neutral-900 flex items-center justify-center font-sans">
-    <div class="text-center px-4">
-      <h1 class="text-2xl font-semibold tracking-tight">Gagandeep Singh</h1>
-      <p class="mt-2 text-neutral-500">Site under construction — check back soon.</p>
-    </div>
+  <body class="min-h-full bg-[#ffffff] text-[#0a0a0a]">
+    <Nav />
+    <main>
+      <Hero />
+      <About />
+    </main>
+    <Footer />
   </body>
 </html>

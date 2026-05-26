@@ -1,1 +1,65 @@
 @import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+@theme {
+  /* Colors */
+  --color-background: #ffffff;
+  --color-surface: #f7f8fa;
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #525866;
+  --color-text-tertiary: #8a94a6;
+  --color-border: #e5e7eb;
+  --color-accent: #5975a4;
+  --color-accent-hover: #4a6491;
+
+  /* Typography */
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Courier New", monospace;
+
+  /* Typographic scale */
+  --text-2xs: 0.75rem;    /* 12px */
+  --text-xs: 0.875rem;    /* 14px */
+  --text-sm: 1rem;        /* 16px — base */
+  --text-md: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 2rem;       /* 32px */
+  --text-3xl: 3rem;       /* 48px */
+  --text-4xl: 4rem;       /* 64px */
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn 0.5s ease-out both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}

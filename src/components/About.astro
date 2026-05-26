@@ -1,0 +1,54 @@
+---
+const skills = [
+  { category: 'PLATFORMS', items: 'Microsoft Fabric, Azure Databricks, Azure Data Factory' },
+  { category: 'LANGUAGES', items: 'SQL / T-SQL, PySpark, Python, Power Query M' },
+  { category: 'DATABASES', items: 'SQL Server, Oracle, IFS Cloud' },
+  { category: 'ETL/ELT', items: 'SSIS, Fabric Data Factory, Dataflows Gen2, Delta Lake, CDC' },
+  { category: 'AUTOMATION', items: 'Power Automate, Microsoft Graph API, REST APIs, Service Principals' },
+  { category: 'BI', items: 'Power BI, Power Query' },
+  { category: 'ARCHITECTURE', items: 'Medallion, metadata-driven ingestion, dimensional modeling' },
+];
+---
+
+<section id="about" class="py-16 md:py-24 border-t border-[#e5e7eb]">
+  <div class="mx-auto w-full max-w-[1100px] px-6 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
+      <!-- Left label -->
+      <div class="pt-1">
+        <span class="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#8a94a6]">
+          About
+        </span>
+      </div>
+
+      <!-- Right content -->
+      <div>
+        <!-- Bio paragraphs -->
+        <div class="space-y-4 text-[16px] leading-[1.7] text-[#525866] mb-10">
+          <p>
+            Gagandeep is a Data Engineer at Price Industries in Winnipeg, where he builds enterprise data pipelines and a central Fabric Lakehouse, consolidating ERP and operational sources into a unified analytics foundation.
+          </p>
+          <p>
+            His work spans the full pipeline lifecycle — designing medallion-architecture ingestion, authoring stored procedures and analytics views, configuring Workspace Identity and Microsoft Graph for unattended automation, and optimizing Spark workloads for production performance.
+          </p>
+          <p>
+            He holds Microsoft DP-700, DP-900, and Databricks Fundamentals certifications, with DP-800 in progress and Databricks Data Engineer Associate as the next target. He graduated from Red River College Polytechnic in 2025 with honours.
+          </p>
+        </div>
+
+        <!-- Skills block -->
+        <div class="space-y-3 border-t border-[#e5e7eb] pt-8">
+          {skills.map(({ category, items }) => (
+            <div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
+              <span class="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-[#8a94a6] shrink-0">
+                {category}
+              </span>
+              <span class="font-mono text-[13px] text-[#525866]">
+                {items}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
